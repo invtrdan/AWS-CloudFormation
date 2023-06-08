@@ -1,0 +1,12 @@
+"MyInstance" : {
+    "Type" : "AWS::S3::Bucket", 
+    "Metadata" : {
+        "AWS::CloudFormation::Init" : {
+            "config" : {:}
+            "packages" : { : },
+            "groups" : { : },
+            "users" : { : },
+            "services" : { : }
+        }
+    }
+}

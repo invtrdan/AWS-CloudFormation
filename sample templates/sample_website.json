@@ -1,0 +1,17 @@
+{
+    "AWSTemplateFormatVersion" : "2010-09-09",
+    "Description" : "Provide an S3-based website",
+    "Resources" : { ... },
+    "Outputs" : { ... }
+}
+
+
+
+
+
+
+
+
+
+
+This template creates a static html website using Amazon S3

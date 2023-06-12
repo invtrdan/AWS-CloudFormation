@@ -1,8 +1,27 @@
 {
-    "AWSTemplateFormatVersion" : "2010-09-09",
-    "Description" : "Provide an S3-based website",
-    "Resources" : { ... },
-    "Outputs" : { ... }
+    "AWSTemplateFormatVersion" : "2010-09-09", 
+    "Description" : "Create a static HTML website using Amazon S3",
+    "Resources" : {
+        "S3Bucket" : {
+            "Type" : "AWS::S3::Bucket",
+            "Properties" : {
+                "AccessControl" : "PublicRead",
+                "WebsiteConfiguration" : {
+                    "IndexDocument" : "index.html",
+                    "ErrorDocument" : "error.html"
+                }
+             },
+            "DeletionPolicy" : "Retain"
+        }
+    },
+    "Outputs" : {
+        "WebsiteURL" : {
+            "Value" : {
+                "Fn::GetAtt" : [ "S3Bucket", "WebsiteURL" ]
+            },
+            "Description" : "URL for website hosted on S3"
+        }
+    }
 }
 
 
@@ -14,4 +33,3 @@
 
 
 
-This template creates a static html website using Amazon S3
